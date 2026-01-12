@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelton Peiris - Honorary Professor of Statistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sydney-blue: #0148A4;
+            --sydney-blue-dark: #003d8f;
+            --sydney-gold: #E64626;
+            
+            --text-primary: #231F20;
+            --text-secondary: #4a4a4a;
+            --text-muted: #6a6a6a;
+            --link-color: #0148A4;
+            --link-hover: #003d8f;
+            --bg-primary: #fafafa;
+            --border-light: #e0e0e0;
+            --sidebar-width: 220px;
+            --content-max-width: 800px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        .page-wrapper {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .main-content {
+            flex: 1;
+            max-width: var(--content-max-width);
+            padding: 60px 0 80px;
+            padding-right: 60px;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            flex-shrink: 0;
+            padding-top: 80px;
+        }
+
+        .sidebar-nav {
+            position: sticky;
+            top: 30px;
+            max-height: calc(100vh - 60px);
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .sidebar-nav::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .sidebar-nav::-webkit-scrollbar-thumb {
+            background: var(--border-light);
+            border-radius: 2px;
+        }
+
+        .sidebar-nav ul {
+            list-style: none;
+        }
+
+        .sidebar-nav > ul > li {
+            margin-bottom: 16px;
+        }
+
+        .sidebar-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            padding: 4px 0;
+            border-left: 2px solid transparent;
+            padding-left: 12px;
+            margin-left: -12px;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-nav a:hover {
+            color: var(--sydney-blue);
+        }
+
+        .sidebar-nav a.active {
+            color: var(--sydney-blue);
+            border-left-color: var(--sydney-blue);
+            font-weight: 600;
+        }
+
+        .sidebar-nav .nav-section > a {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .sidebar-nav .nav-section > a.active {
+            color: var(--sydney-blue);
+        }
+
+        .sidebar-nav .nav-subsection {
+            margin-left: 12px;
+            margin-top: 6px;
+        }
+
+        .sidebar-nav .nav-subsection a {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .sidebar-nav .back-to-top {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .sidebar-nav .back-to-top a {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .profile {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 6px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .profile-info h1 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .profile-info p {
+            margin-bottom: 12px;
+            color: var(--text-secondary);
+        }
+
+        .profile-info a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .profile-info a:hover {
+            text-decoration: underline;
+            color: var(--link-hover);
+        }
+
+        .contact-links {
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        .contact-links a {
+            color: var(--link-color);
+            text-decoration: none;
+            margin-right: 8px;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+            color: var(--link-hover);
+        }
+
+        .contact-links .separator {
+            color: var(--text-muted);
+            margin: 0 4px;
+        }
+
+        section {
+            margin-bottom: 50px;
+            scroll-margin-top: 20px;
+        }
+
+        h2 {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--sydney-blue);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            scroll-margin-top: 20px;
+        }
+
+        .pub-list {
+            list-style: none;
+        }
+
+        .pub-list li {
+            margin-bottom: 20px;
+            padding-left: 0;
+            line-height: 1.6;
+        }
+
+        .pub-title {
+            color: var(--text-primary);
+        }
+
+        .pub-authors {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        .pub-venue {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.95em;
+        }
+
+        .pub-links {
+            margin-top: 4px;
+        }
+
+        .pub-links a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-right: 12px;
+        }
+
+        .pub-links a:hover {
+            text-decoration: underline;
+            color: var(--link-hover);
+        }
+
+        .pub-links a::before {
+            content: "[";
+        }
+
+        .pub-links a::after {
+            content: "]";
+        }
+
+        .simple-list {
+            list-style: none;
+        }
+
+        .simple-list li {
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 1000px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main-content {
+                padding-right: 0;
+                max-width: 100%;
+            }
+
+            .page-wrapper {
+                display: block;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .profile {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-info h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <main class="main-content">
+            <header id="top" class="profile">
+                <img src="resource.jpeg" alt="Shelton Peiris" class="profile-photo">
+                
+                <div class="profile-info">
+                    <h1>Shelton Peiris</h1>
+                    <p>
+                        I am an Honorary Professor of Statistics in the 
+                        <a href="https://www.maths.usyd.edu.au/">School of Mathematics and Statistics</a> 
+                        at the <a href="https://www.sydney.edu.au/">University of Sydney</a>, Australia.
+                    </p>
+                    <p>
+                        I am a Fellow of the <a href="https://rss.org.uk/">Royal Statistical Society</a> (FRSS),
+                        an Honorary Fellow of the Institute of Applied Statistics, Sri Lanka (FIASSL),
+                        an elected member of the <a href="https://www.isi-web.org/">International Statistical Institute</a> (ISI),
+                        and a World Class Professor at the University of Gadjah Mada, Indonesia.
+                    </p>
+                    <p>
+                        My research examines time series analysis, financial econometrics, and statistical inference.
+                        I completed my PhD in Mathematical Statistics at Monash University in 1987.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:shelton.peiris@sydney.edu.au">shelton.peiris@sydney.edu.au</a>
+                        <span class="separator">·</span>
+                        <a href="https://www.maths.usyd.edu.au/u/shelton/">Sydney</a>
+                        <span class="separator">·</span>
+                        <a href="https://scholar.google.com/citations?user=SHELTON">Scholar</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Publications Section -->
+            <section id="publications">
+                <h2>Publications</h2>
+                
+                <ul class="pub-list">
+                    <li>
+                        <span class="pub-title">Modelling Volatility and Return Based on a Two-Stage Log-BiACARR Framework</span><br>
+                        <span class="pub-authors">He, J., Ng, K., Peiris, M., and Allen, D.</span><br>
+                        <span class="pub-venue">Physica A, 681, 131097, 2026</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">A Novel ARFIMA-ANN Hybrid Model for Forecasting Time Series and its Role in Explainable AI</span><br>
+                        <span class="pub-authors">Dowe, D., Peiris, M., and Kim, E.</span><br>
+                        <span class="pub-venue">Journal of Econometrics and Statistics, 5(1), pp. 107-127, 2025</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Optimal Time Series Forecasting Through the GARMA Model</span><br>
+                        <span class="pub-authors">Gadhi, A., Peiris, M., Allen, D., and Hunt, R.</span><br>
+                        <span class="pub-venue">Econometrics, 13(1), 3, 2025</span>
+                        <div class="pub-links">
+                            <a href="https://www.mdpi.com/2225-1146/13/1/3">paper</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">GANs and Synthetic Financial Data: Calculating VaR</span><br>
+                        <span class="pub-authors">Allen, D., Mushunje, L., and Peiris, M.</span><br>
+                        <span class="pub-venue">Applied Economics, 2024</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Seasonal Generalized AR Models</span><br>
+                        <span class="pub-authors">Hunt, R., Peiris, M., and Weber, N.</span><br>
+                        <span class="pub-venue">Communications in Statistics: Theory and Methods, 53(3), pp. 1065-1080, 2024</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Bayesian Estimation of Gegenbauer Processes</span><br>
+                        <span class="pub-authors">Hunt, R., Peiris, M., and Weber, N.</span><br>
+                        <span class="pub-venue">Journal of Statistical Computation and Simulation, 93(9), pp. 1357-1377, 2023</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">GARMA, HAR and Rules of Thumb for Modelling Realized Volatility</span><br>
+                        <span class="pub-authors">Allen, D. and Peiris, M.</span><br>
+                        <span class="pub-venue">Risks, 11(10), 179, 2023</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Revisiting the Autocorrelation of Long Memory Time Series Models</span><br>
+                        <span class="pub-authors">Peiris, M. and Hunt, R.</span><br>
+                        <span class="pub-venue">Mathematics, 11(4), 817, 2023</span>
+                        <div class="pub-links">
+                            <a href="https://www.mdpi.com/2227-7390/11/4/817">paper</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Estimation Methods for Stationary Gegenbauer Processes</span><br>
+                        <span class="pub-authors">Hunt, R., Peiris, M., and Weber, N.</span><br>
+                        <span class="pub-venue">Statistical Papers, 63(6), pp. 1707-1741, 2022</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">A General Frequency Domain Estimation Method for Gegenbauer Processes</span><br>
+                        <span class="pub-authors">Hunt, R., Peiris, S., and Weber, N.</span><br>
+                        <span class="pub-venue">Journal of Time Series Econometrics, 13(2), pp. 119-144, 2021</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Minimum Message Length in Hybrid ARMA and LSTM Model Forecasting</span><br>
+                        <span class="pub-authors">Fang, Z., Dowe, D., Peiris, M., and Rosadi, D.</span><br>
+                        <span class="pub-venue">Entropy, 23(12), 1601, 2021</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Cointegrated Dynamics for a Generalized Long Memory Process: Application to Interest Rates</span><br>
+                        <span class="pub-authors">Asai, M., Peiris, M., McAleer, M., and Allen, D.</span><br>
+                        <span class="pub-venue">Journal of Time Series Econometrics, 12(1), 20180024, 2020</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">On Generalized Bivariate Student-t Gegenbauer Long Memory Stochastic Volatility Models: Bayesian Forecasting of Cryptocurrencies</span><br>
+                        <span class="pub-authors">Phillip, A., Chan, J., and Peiris, M.</span><br>
+                        <span class="pub-venue">Econometrics and Statistics, 16, pp. 69-90, 2020</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Realized Stochastic Volatility Models with Generalized Gegenbauer Long Memory</span><br>
+                        <span class="pub-authors">Asai, M., McAleer, M., and Peiris, M.</span><br>
+                        <span class="pub-venue">Econometrics and Statistics, 16, pp. 42-54, 2020</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Efficient Estimation of Financial Risk by Regressing the Quantiles of Parametric Distributions</span><br>
+                        <span class="pub-authors">Chan, J., Ng, K., Nitithumbundit, T., and Peiris, M.</span><br>
+                        <span class="pub-venue">Studies in Nonlinear Dynamics and Econometrics, 23(2), pp. 1-22, 2019</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">On Long Memory Effects in the Volatility Measure of Cryptocurrencies</span><br>
+                        <span class="pub-authors">Phillip, A., Chan, J., and Peiris, M.</span><br>
+                        <span class="pub-venue">Finance Research Letters, 28, pp. 95-100, 2019</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">A New Look at Cryptocurrencies</span><br>
+                        <span class="pub-authors">Phillip, A., Chan, J., and Peiris, M.</span><br>
+                        <span class="pub-venue">Economics Letters, 163, pp. 6-9, 2018</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">An Introduction to Vector Gegenbauer Processes with Long Memory</span><br>
+                        <span class="pub-authors">Wu, H. and Peiris, M.</span><br>
+                        <span class="pub-venue">Stat, 7(1), pp. 1-20, 2018</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Bayesian Estimation of Gegenbauer Long Memory Processes with Stochastic Volatility</span><br>
+                        <span class="pub-authors">Phillip, A., Chan, J., and Peiris, M.</span><br>
+                        <span class="pub-venue">Studies in Nonlinear Dynamics and Econometrics, 22(3), pp. 1-29, 2018</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Fractionally Differenced Gegenbauer Processes with Long Memory: A Review</span><br>
+                        <span class="pub-authors">Dissanayake, G., Peiris, M., and Proietti, T.</span><br>
+                        <span class="pub-venue">Statistical Science, 33(3), pp. 413-426, 2018</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Efficient Modelling and Forecasting with Range Based Volatility Models</span><br>
+                        <span class="pub-authors">Ng, K., Peiris, M., Chan, J., Allen, D., and Ng, K.</span><br>
+                        <span class="pub-venue">North American Journal of Economics and Finance, 42, pp. 448-460, 2017</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Bayesian Estimation and Inference for Log-ACD Models</span><br>
+                        <span class="pub-authors">Gerlach, R., Peiris, M., and Lin, E.</span><br>
+                        <span class="pub-venue">Computational Statistics, 31(1), pp. 25-48, 2016</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">State Space Modeling of Gegenbauer Processes with Long Memory</span><br>
+                        <span class="pub-authors">Dissanayake, G., Peiris, M., and Proietti, T.</span><br>
+                        <span class="pub-venue">Computational Statistics and Data Analysis, 100, pp. 115-130, 2016</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Nonlinear Time Series and Neural-Network Models of Exchange Rates</span><br>
+                        <span class="pub-authors">Allen, D., McAleer, M., Peiris, M., and Singh, A.</span><br>
+                        <span class="pub-venue">Risks, 4(7), pp. 1-14, 2016</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Estimation and Forecasting with Logarithmic Autoregressive Conditional Duration Models</span><br>
+                        <span class="pub-authors">Ng, K., Peiris, M., and Gerlach, R.</span><br>
+                        <span class="pub-venue">Expert Systems with Applications, 41(7), pp. 3323-3332, 2014</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Estimating and Simulating Weibull Models of Risk or Price Durations</span><br>
+                        <span class="pub-authors">Allen, D., Ng, K., and Peiris, M.</span><br>
+                        <span class="pub-venue">North American Journal of Economics and Finance, 25, pp. 214-225, 2013</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">The Efficient Modelling of High Frequency Transaction Data</span><br>
+                        <span class="pub-authors">Allen, D., Ng, K., and Peiris, M.</span><br>
+                        <span class="pub-venue">Economics Letters, 120, pp. 117-122, 2013</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Doubly Stochastic Models with GARCH Innovations</span><br>
+                        <span class="pub-authors">Peiris, M., Thavaneswaran, A., and Appadoo, S.</span><br>
+                        <span class="pub-venue">Applied Mathematics Letters, 24(11), pp. 1768-1773, 2011</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Comparison of Alternative ACD Models via Density and Interval Forecasts</span><br>
+                        <span class="pub-authors">Allen, D., Lazarov, Z., McAleer, M., and Peiris, M.</span><br>
+                        <span class="pub-venue">Mathematics and Computers in Simulation, 79(8), pp. 2535-2555, 2009</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Finite Sample Properties of the QMLE for the Log-ACD Model</span><br>
+                        <span class="pub-authors">Allen, D., Chan, F., McAleer, M., and Peiris, M.</span><br>
+                        <span class="pub-venue">Journal of Econometrics, 147(1), pp. 163-185, 2008</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Random Coefficient Volatility Models</span><br>
+                        <span class="pub-authors">Thavaneswaran, A., Peiris, M., and Appadoo, S.</span><br>
+                        <span class="pub-venue">Statistics and Probability Letters, 78, pp. 582-593, 2008</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">The Empirical Saddlepoint Method Applied to Testing for Serial Correlation</span><br>
+                        <span class="pub-authors">Perera, D., Peiris, M., Robinson, J., and Weber, N.</span><br>
+                        <span class="pub-venue">Statistics and Probability Letters, 78(17), pp. 2876-2882, 2008</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">An Introduction to Volatility Models with Indices</span><br>
+                        <span class="pub-authors">Peiris, M. and Thavaneswaran, A.</span><br>
+                        <span class="pub-venue">Applied Mathematics Letters, 20(2), pp. 177-182, 2007</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Forecasting Volatility</span><br>
+                        <span class="pub-authors">Thavaneswaran, A., Appadoo, S., and Peiris, M.</span><br>
+                        <span class="pub-venue">Statistics and Probability Letters, 75(1), pp. 1-10, 2005</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">An Examination of the Role of Time and its Impact on Price Revision</span><br>
+                        <span class="pub-authors">Allen, D., Peiris, M., and Yang, J.</span><br>
+                        <span class="pub-venue">Australian Journal of Management, 30(2), pp. 283-301, 2005</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">A Note on Testing for Serial Correlation in Large Number of Small Samples</span><br>
+                        <span class="pub-authors">Peiris, M. and Rao, C.R.</span><br>
+                        <span class="pub-venue">Communications in Statistics: Theory and Methods, 33(8), pp. 1767-1777, 2004</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">A Note on the Filtering for Some Time Series Models</span><br>
+                        <span class="pub-authors">Peiris, M. and Thavaneswaran, A.</span><br>
+                        <span class="pub-venue">Journal of Time Series Analysis, 25(3), pp. 397-407, 2004</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">The Bias of Lag Window Estimators of the Fractional Difference Parameter</span><br>
+                        <span class="pub-authors">Hunt, R., Peiris, M., and Weber, N.</span><br>
+                        <span class="pub-venue">Journal of Applied Mathematics and Computing, 12(1-2), pp. 67-79, 2003</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Inference for Some Time Series Models with Random Coefficients</span><br>
+                        <span class="pub-authors">Peiris, M. and Thavaneswaran, A.</span><br>
+                        <span class="pub-venue">Mathematical and Computer Modelling, 33, pp. 843-849, 2001</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">Lag Window Estimation of the Degree of Differencing in Fractionally Integrated Time Series</span><br>
+                        <span class="pub-authors">Chen, G., Abraham, B., and Peiris, S.</span><br>
+                        <span class="pub-venue">Journal of Time Series Analysis, 15(5), pp. 473-487, 1994</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">On Prediction with Fractionally Differenced ARIMA Models</span><br>
+                        <span class="pub-authors">Peiris, M.S. and Perera, B.J.C.</span><br>
+                        <span class="pub-venue">Journal of Time Series Analysis, 9(3), pp. 215-220, 1988</span>
+                    </li>
+                </ul>
+
+                <h3 id="books">Books</h3>
+                <ul class="pub-list">
+                    <li>
+                        <span class="pub-title">Python and R in Statistics and Data Science</span><br>
+                        <span class="pub-authors">Jajo, N. and Peiris, M.</span><br>
+                        <span class="pub-venue">LAP Lambert Academic Publishing, 2023</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">A Quick Reference Guide to Statistics and Data Science Using RStudio</span><br>
+                        <span class="pub-authors">Peiris, M., Chan, J., and Jajo, N.</span><br>
+                        <span class="pub-venue">CV. Meugah Printindo, Indonesia, 2021</span>
+                    </li>
+
+                    <li>
+                        <span class="pub-title">MATH1015: Biostatistics</span><br>
+                        <span class="pub-authors">Rosner, B., Peiris, M., Chan, J., and Marchev, D.</span><br>
+                        <span class="pub-venue">Cengage Learning, 2013</span>
+                    </li>
+                </ul>
+
+                <h3 id="book-chapters">Book Chapters</h3>
+                <ul class="pub-list">
+                    <li>
+                        <span class="pub-title">Currency Spillover Effects between the US Dollar and Some Major Currencies</span><br>
+                        <span class="pub-authors">Allen, D., Kalev, P., Peiris, M., and Singh, A.</span><br>
+                        <span class="pub-venue">in "Handbook of Global Financial Markets", Eds: Boubaker, Nguyen, World Scientific, 2019</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Honours Section -->
+            <section id="honours">
+                <h2>Honours and Awards</h2>
+                <ul class="simple-list">
+                    <li>World Class Professor, University of Gadjah Mada, Indonesia (2020)</li>
+                    <li>Honorary Fellow, Institute of Applied Statistics, Sri Lanka (FIASSL, 2017)</li>
+                    <li>Fellow, Royal Statistical Society (FRSS)</li>
+                    <li>Elected Member, International Statistical Institute (ISI)</li>
+                    <li>Member, American Statistical Association (ASA)</li>
+                    <li>Faculty of Science Citation for Excellence in Teaching, University of Sydney (2012)</li>
+                    <li>Bronze Medal for Research, Universiti Putra Malaysia (2007, 2011)</li>
+                    <li>Monash University Graduate Scholarship (1983)</li>
+                </ul>
+            </section>
+
+            <!-- Visiting Appointments Section -->
+            <section id="visiting">
+                <h2>Visiting Appointments</h2>
+                <ul class="simple-list">
+                    <li>Visiting Professor of Statistics, University of California, Davis (2024)</li>
+                    <li>Professor of Economics, University of Roma, Tor Vergata, Italy (2022)</li>
+                    <li>World Class Professor, University of Gadjah Mada, Indonesia (2020-present)</li>
+                    <li>Professor of Statistics, Simon Fraser University, Canada (2019)</li>
+                    <li>Professor of Statistics, Plekhanov University, Moscow (2018)</li>
+                    <li>Professor of Statistics, University of Ioannina, Greece (2018)</li>
+                    <li>Professor of Economics, Soka University, Tokyo (2015)</li>
+                    <li>Professor of Statistics, Higher School of Economics, Moscow (2015)</li>
+                    <li>Professor of Statistics, University of Malaya (2007, 2010, 2012/2013)</li>
+                    <li>Professor of Statistics, Pennsylvania State University (2002)</li>
+                    <li>Professor of Statistics, Thaksin University, Thailand (1998)</li>
+                    <li>Professor of Statistics, University of Iowa (1997)</li>
+                    <li>Professor of Statistics, University of Manitoba (1997)</li>
+                    <li>Professor of Statistics, University of Waterloo (1993)</li>
+                </ul>
+            </section>
+
+            <!-- Grants Section -->
+            <section id="grants">
+                <h2>Grants</h2>
+                <ul class="pub-list">
+                    <li>
+                        <span class="pub-title">Modelling Stock Market Liquidity in Australia and the Asia Pacific Region</span><br>
+                        <span class="pub-authors">with Allen, McAleer, Chan</span><br>
+                        <span class="pub-venue">ARC Linkage Grant, A$295,000, 2005-2007</span>
+                    </li>
+                    <li>
+                        <span class="pub-title">Financial Duration Modelling and Forecasting for Risk Management</span><br>
+                        <span class="pub-authors">with Gerlach</span><br>
+                        <span class="pub-venue">ARC Bridging Grant, A$30,000, 2012-2014</span>
+                    </li>
+                    <li>
+                        <span class="pub-title">Estimation and Statistical Inference for Volatility Models in Finance</span><br>
+                        <span class="pub-venue">University of Malaya Research Grant, RM32,900, 2013-2014</span>
+                    </li>
+                    <li>
+                        <span class="pub-title">Monitoring Process Shifts Using Robust Control Charts</span><br>
+                        <span class="pub-venue">Ministry of Higher Education Malaysia, RM46,000, 2013-2015</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Editorial Section -->
+            <section id="editorial">
+                <h2>Editorial</h2>
+                <ul class="simple-list">
+                    <li>Associate Editor, <a href="https://www.tandfonline.com/toc/gscs20/current">Journal of Statistical Computation and Simulation</a></li>
+                    <li>Associate Editor, Advances in Decision Sciences</li>
+                    <li>Associate Editor, Pakistan Journal of Statistics and Operation Research</li>
+                    <li>Associate Editor, Journal of Statistics</li>
+                    <li>Editorial Advisory Board, Sri Lankan Journal of Applied Statistics</li>
+                    <li>Editorial Board, Journal of Mathematics and Statistics</li>
+                    <li>Editorial Board, InterStat</li>
+                    <li>Reviewer, AMS Mathematical Reviews</li>
+                </ul>
+            </section>
+
+            <!-- Presentations Section -->
+            <section id="presentations">
+                <h2>Selected Presentations</h2>
+                <ul class="simple-list">
+                    <li>Keynote Address, World Class Professor Workshop on Statistical Analysis of Time Series, University of Gadjah Mada (2020)</li>
+                    <li>Plenary Speaker, 8th SEAMS-UGM Conference, Indonesia (2019)</li>
+                    <li>Keynote Speaker, International Conference on Economics, Finance and Statistics, Hong Kong (2017)</li>
+                    <li>Plenary Speaker, IASSL International Statistics Conference, Colombo (2017)</li>
+                </ul>
+            </section>
+
+            <!-- Service Section -->
+            <section id="service">
+                <h2>Professional Service</h2>
+                <ul class="simple-list">
+                    <li>President, International Engineering and Technology Institute, Sydney-NSW Branch</li>
+                    <li>Councillor and Treasurer, Statistical Society of Australia Inc. NSW Branch (2003-2006)</li>
+                    <li>Director, Statistics Teaching Program, University of Sydney (until 2015)</li>
+                    <li>Chairperson, International Statistics Conference, Colombo, Sri Lanka (2011)</li>
+                    <li>Member, Financial Research Network (FIRN)</li>
+                    <li>Member, Statistical Society of Australia</li>
+                    <li>Member, Australian Mathematical Society</li>
+                    <li>Member, Institute of Applied Statistics, Sri Lanka</li>
+                </ul>
+            </section>
+
+            <!-- Creative Work Section -->
+            <section id="creative">
+                <h2>Creative Work</h2>
+
+                <h3 id="stories">Short Stories (in Sinhala)</h3>
+                <ul class="simple-list">
+                    <li>A Past Spring (The Sinhala, Dec 2015)</li>
+                    <li>A Memory of Christmas (The Sinhala, Dec 2014)</li>
+                    <li>Hantanen Esala Sandak (The Sinhala, Aug 2014)</li>
+                    <li>Charlis Mama (The Sinhala, Aug 2013)</li>
+                    <li>Mother's Love (The Sinhala, Aug 2010)</li>
+                    <li>Antho Jata II (Tangled Mind, Part Two) (Pahana, Oct/Nov 2009)</li>
+                    <li>Antho Jata I (Tangled Mind, Part One) (Pahana, Sep 2009)</li>
+                    <li>The Moon is Shining Again (The Sinhala, Aug 2009)</li>
+                    <li>Destiny (The Sinhala, Oct 2008)</li>
+                    <li>Another Spring (The Sinhala, Aug 2008)</li>
+                    <li>Scholarship to Sydney (Thisara Tharana, 2008)</li>
+                </ul>
+
+                <h3 id="poetry">Poetry (Kavi, in Sinhala)</h3>
+                <ul class="simple-list">
+                    <li>Amme (Mother) (The Sinhala, Nov 2017)</li>
+                    <li>Hope (The Sinhala, Jan 2010)</li>
+                    <li>Ran Wata Piduma (Lankaramaya News Letter, Vesak 2010)</li>
+                    <li>Poson Kavi (Lankaramaya Electronic News Letter, Jun 2010)</li>
+                    <li>A Request from a Mother to Her Son Living Overseas (The Sinhala, Nov 2011)</li>
+                    <li>Aradhana (Lankaramaya News Letter, Mar 2012)</li>
+                    <li>Nangi (Sister) (The Sinhala, Sep 2012)</li>
+                    <li>Mata Aaasai (I Wish to Go) (The Sinhala, Dec 2012)</li>
+                    <li>1973 Peradeniya (Life) Memories (The Sinhala, Dec 2013)</li>
+                    <li>2014 Awrudu (The SCF, Bakmaha Ranga Publication, Apr 2014)</li>
+                </ul>
+            </section>
+
+            <!-- Community Service Section -->
+            <section id="community">
+                <h2>Community Service</h2>
+
+                <h3 id="current-roles">Current Roles</h3>
+                <ul class="simple-list">
+                    <li>Justice of the Peace (NSW)</li>
+                    <li>Community Leader helping needy adults and children</li>
+                </ul>
+
+                <h3 id="sla">Sri Lanka Association of NSW</h3>
+                <ul class="simple-list">
+                    <li>40th President (2012/2013)</li>
+                    <li>Vice President (2011/2012)</li>
+                    <li>Secretary (2007-2010)</li>
+                    <li>Committee Member (2010/2011)</li>
+                </ul>
+
+                <h3 id="lions">Sydney Sri Lankan Lions Club</h3>
+                <ul class="simple-list">
+                    <li>President (2020/2021)</li>
+                    <li>Founder President Elect (2016/2017)</li>
+                </ul>
+
+                <h3 id="writers">Writers Guild of NSW (Sinhalese Cultural Forum)</h3>
+                <ul class="simple-list">
+                    <li>President (2020/2021)</li>
+                    <li>Secretary (2016-2018)</li>
+                </ul>
+
+                <h3 id="anandians">Anandians of NSW</h3>
+                <ul class="simple-list">
+                    <li>President (2016/2017)</li>
+                    <li>President Elect (2013/2014)</li>
+                    <li>Committee Member (2014-2016)</li>
+                </ul>
+
+                <h3 id="lankaramaya">Lankaramaya Buddhist Vihara Association</h3>
+                <ul class="simple-list">
+                    <li>Vice President/Editor (2007-2010)</li>
+                    <li>Secretary/Editor (2011/2012)</li>
+                    <li>Committee Member/Editor (2012-2014)</li>
+                </ul>
+
+                <h3 id="peradeniya">Peradeniya University Alumni Association of NSW</h3>
+                <ul class="simple-list">
+                    <li>Founder Member</li>
+                    <li>Assistant Treasurer (2007-2009)</li>
+                </ul>
+            </section>
+
+            <!-- Personal Section -->
+            <section id="personal">
+                <h2>Personal</h2>
+                <ul class="simple-list">
+                    <li>Sports: Tennis, Cricket, Jogging, Walking</li>
+                    <li>Music: Classical (worldwide)</li>
+                    <li>Writing: Poems and Stories (in Sinhalese)</li>
+                </ul>
+            </section>
+
+            <footer>
+                <p>© Shelton Peiris · School of Mathematics and Statistics, University of Sydney</p>
+            </footer>
+        </main>
+
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-section">
+                        <a href="#publications">Publications</a>
+                        <ul class="nav-subsection">
+                            <li><a href="#books">Books</a></li>
+                            <li><a href="#book-chapters">Book Chapters</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-section">
+                        <a href="#honours">Honours</a>
+                    </li>
+                    <li class="nav-section">
+                        <a href="#visiting">Visiting Appointments</a>
+                    </li>
+                    <li class="nav-section">
+                        <a href="#grants">Grants</a>
+                    </li>
+                    <li class="nav-section">
+                        <a href="#editorial">Editorial</a>
+                    </li>
+                    <li class="nav-section">
+                        <a href="#presentations">Presentations</a>
+                    </li>
+                    <li class="nav-section">
+                        <a href="#service">Service</a>
+                    </li>
+                    <li class="nav-section">
+                        <a href="#creative">Creative Work</a>
+                        <ul class="nav-subsection">
+                            <li><a href="#stories">Short Stories</a></li>
+                            <li><a href="#poetry">Poetry</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-section">
+                        <a href="#community">Community Service</a>
+                        <ul class="nav-subsection">
+                            <li><a href="#sla">Sri Lanka Assoc.</a></li>
+                            <li><a href="#lions">Lions Club</a></li>
+                            <li><a href="#writers">Writers Guild</a></li>
+                            <li><a href="#anandians">Anandians</a></li>
+                            <li><a href="#lankaramaya">Lankaramaya</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-section">
+                        <a href="#personal">Personal</a>
+                    </li>
+                </ul>
+                <div class="back-to-top">
+                    <a href="#top">↑ Back to top</a>
+                </div>
+            </nav>
+        </aside>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section[id], h3[id]');
+            const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+            function highlightNav() {
+                let current = '';
+                const scrollPos = window.scrollY + 100;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollPos >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightNav);
+            highlightNav();
+        });
+    </script>
+</body>
+</html>
